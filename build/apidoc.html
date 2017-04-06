@@ -1,0 +1,1567 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/assemble/assemble"
+
+    >assemble (v0.23.0)</a>
+</h1>
+<h4>Get the rocks out of your socks! Assemble makes you fast at creating web projects. Assemble is used by thousands of projects for rapid prototyping, creating themes, scaffolds, boilerplates, e-books, UI components, API documentation, blogs, building websit</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.assemble">module assemble</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.initAssemble">
+            function <span class="apidocSignatureSpan">assemble.</span>initAssemble
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.initDefaults">
+            function <span class="apidocSignatureSpan">assemble.</span>initDefaults
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.initViews">
+            function <span class="apidocSignatureSpan">assemble.</span>initViews
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins">
+            function <span class="apidocSignatureSpan">assemble.</span>plugins
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils">
+            function <span class="apidocSignatureSpan">assemble.</span>utils
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.assemble.plugins">module assemble.plugins</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.plugins">
+            function <span class="apidocSignatureSpan">assemble.</span>plugins
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.argv">
+            function <span class="apidocSignatureSpan">assemble.plugins.</span>argv
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.cli">
+            function <span class="apidocSignatureSpan">assemble.plugins.</span>cli
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.config">
+            function <span class="apidocSignatureSpan">assemble.plugins.</span>config
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.loader">
+            function <span class="apidocSignatureSpan">assemble.plugins.</span>loader
+            <span class="apidocSignatureSpan">(patterns, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.logger">
+            function <span class="apidocSignatureSpan">assemble.plugins.</span>logger
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins.runtimes">
+            function <span class="apidocSignatureSpan">assemble.plugins.</span>runtimes
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.assemble.utils">module assemble.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.utils">
+            function <span class="apidocSignatureSpan">assemble.</span>utils
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.arrayify">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>arrayify
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.colors">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>colors
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.exists">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>exists
+            <span class="apidocSignatureSpan">(filepath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.extRegex">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>extRegex
+            <span class="apidocSignatureSpan">(exts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.formatDir">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>formatDir
+            <span class="apidocSignatureSpan">(cwd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.homeRelative">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>homeRelative
+            <span class="apidocSignatureSpan">(fp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.isValid">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>isValid
+            <span class="apidocSignatureSpan">(app, name, types)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.log">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>log
+            <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.parse">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>parse
+            <span class="apidocSignatureSpan">(args, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.parseArgs">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>parseArgs
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.questions">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>questions
+            <span class="apidocSignatureSpan">(config, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.resolveDir">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>resolveDir
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils.spawn">
+            function <span class="apidocSignatureSpan">assemble.utils.</span>spawn
+            <span class="apidocSignatureSpan">(command, args, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">assemble.utils.</span>matter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">assemble.utils.</span>opts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">assemble.utils.</span>gm</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.assemble" id="apidoc.module.assemble">module assemble</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.initAssemble" id="apidoc.element.assemble.initAssemble">
+        function <span class="apidocSignatureSpan">assemble.</span>initAssemble
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initAssemble = function (app) {
+  Assemble.initDefaults(app);
+  Assemble.initPlugins(app);
+  Assemble.initViews(app);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function Assemble(options) {
+  if (!(this instanceof Assemble)) {
+    return new Assemble(options);
+  }
+  Core.call(this, options);
+  this.is(&#x27;assemble&#x27;);
+  this.<span class="apidocCodeKeywordSpan">initAssemble</span>();
+}
+
+/**
+ * Inherit `Core`
+ */
+
+Core.extend(Assemble);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.initDefaults" id="apidoc.element.assemble.initDefaults">
+        function <span class="apidocSignatureSpan">assemble.</span>initDefaults
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initDefaults = function (app) {
+  var exts = app.options.exts || [&#x27;md&#x27;, &#x27;hbs&#x27;, &#x27;html&#x27;];
+
+<span class="apidocCodeCommentSpan">  /**
+   * Default engine
+   */
+</span>
+  app.engine(exts, require(&#x27;engine-handlebars&#x27;));
+
+  /**
+   * Middleware for parsing front matter
+   */
+
+  app.onLoad(utils.extRegex(exts), function(view, next) {
+    // check options inside the middleware to account for options defined after init
+    if (view.options.frontMatter === false) {
+      next();
+      return;
+    }
+    if (app.options.frontMatter === false) {
+      next();
+      return;
+    }
+    utils.matter.parse(view, next);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+* Initialize Assemble defaults, plugins and views
+*/
+
+Assemble.initAssemble = function(app) {
+ Assemble.<span class="apidocCodeKeywordSpan">initDefaults</span>(app);
+ Assemble.initPlugins(app);
+ Assemble.initViews(app);
+};
+
+/**
+* Initialize defaults
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.initViews" id="apidoc.element.assemble.initViews">
+        function <span class="apidocSignatureSpan">assemble.</span>initViews
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initViews = function (app) {
+  if (app.isFalse(&#x27;collections&#x27;)) return;
+
+  app.create(&#x27;partials&#x27;, {
+    engine: app.options.engine || &#x27;hbs&#x27;,
+    viewType: &#x27;partial&#x27;,
+    renameKey: function(fp) {
+      return path.basename(fp, path.extname(fp));
+    }
+  });
+
+  app.create(&#x27;layouts&#x27;, {
+    engine: app.options.engine || &#x27;hbs&#x27;,
+    viewType: &#x27;layout&#x27;,
+    renameKey: function(fp) {
+      return path.basename(fp, path.extname(fp));
+    }
+  });
+
+  app.create(&#x27;pages&#x27;, {
+    engine: app.options.engine || &#x27;hbs&#x27;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Initialize Assemble defaults, plugins and views
+ */
+
+Assemble.initAssemble = function(app) {
+  Assemble.initDefaults(app);
+  Assemble.initPlugins(app);
+  Assemble.<span class="apidocCodeKeywordSpan">initViews</span>(app);
+};
+
+/**
+ * Initialize defaults
+ */
+
+Assemble.initDefaults = function(app) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins" id="apidoc.element.assemble.plugins">
+        function <span class="apidocSignatureSpan">assemble.</span>plugins
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== &#x27;string&#x27;) {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it&#x27;s called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils" id="apidoc.element.assemble.utils">
+        function <span class="apidocSignatureSpan">assemble.</span>utils
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== &#x27;string&#x27;) {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it&#x27;s called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.assemble.plugins" id="apidoc.module.assemble.plugins">module assemble.plugins</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.plugins" id="apidoc.element.assemble.plugins.plugins">
+        function <span class="apidocSignatureSpan">assemble.</span>plugins
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== &#x27;string&#x27;) {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it&#x27;s called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.argv" id="apidoc.element.assemble.plugins.argv">
+        function <span class="apidocSignatureSpan">assemble.plugins.</span>argv
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">argv = function (config) {
+  return function() {
+    if (!utils.isValid(this)) return;
+    debug(&#x27;initializing &#x3c;%s&#x3e;, called from &#x3c;%s&#x3e;&#x27;, __filename, module.parent.id);
+
+<span class="apidocCodeCommentSpan">    /**
+     * Process and normalize command line arguments.
+     *
+     * @param {Object} `argv`
+     * @param {Object} `options`
+     * @return {Object}
+     * @api public
+     */
+</span>
+    this.define(&#x27;argv&#x27;, function(argv, options) {
+      if (argv.processed === true) {
+        return argv;
+      }
+
+      debug(&#x27;processing argv object&#x27;, argv);
+
+      var orig = Array.isArray(argv) ? argv.slice() : utils.extend({}, argv);
+      var opts = utils.extend({}, config, this.options, options, argv);
+      var args = processArgv(this, argv, opts);
+      if (args.expand === &#x27;false&#x27; || opts.expand === false) {
+        delete args.expand;
+        return args;
+      }
+
+      utils.define(args, &#x27;orig&#x27;, orig);
+      utils.define(args, &#x27;processed&#x27;, true);
+
+      this.emit(&#x27;argv&#x27;, args);
+      return args;
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.cli" id="apidoc.element.assemble.plugins.cli">
+        function <span class="apidocSignatureSpan">assemble.plugins.</span>cli
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cli = function (config) {
+  config = config || {};
+
+  return function(app, base) {
+    if (!utils.isValid(app, &#x27;base-cli-process&#x27;)) return;
+    debug(&#x27;initializing &#x3c;%s&#x3e;, called from &#x3c;%s&#x3e;&#x27;, __filename, module.parent.id);
+
+    app.use(assertPlugin);
+    var options = createOpts(app, config);
+    var schema;
+
+    initPlugins(this, options);
+
+    Object.defineProperty(this.cli, &#x27;schema&#x27;, {
+      cliurable: true,
+      enumerable: true,
+      set: function(val) {
+        schema = val;
+      },
+      get: function() {
+        return schema || utils.schema(app, createOpts(app, config));
+      }
+    });
+
+    // add commands
+    for (var key in fields) {
+      debug(&#x27;mapping field &#x22;%s&#x22;&#x27;, key);
+      app.cli.map(key, fields[key](app, base, options));
+    }
+
+    var fn = this.cli.process;
+
+    this.cli.process = function(val, cb) {
+      debug(&#x27;normalizing argv object&#x27;, val);
+
+      var defaults = {sortArrays: false, omitEmpty: true};
+      var keys = [&#x27;get&#x27;, &#x27;set&#x27;, &#x27;toc&#x27;, &#x27;layout&#x27;, &#x27;options&#x27;, &#x27;data&#x27;, &#x27;plugins&#x27;, &#x27;related&#x27;, &#x27;reflinks&#x27;, &#x27;init&#x27;, &#x27;run&#x27;, &#x27;tasks&#x27;];
+
+      var opts = createOpts(app, config, defaults);
+      var obj = sortObject(this.schema.normalize(val, opts), keys);
+
+      debug(&#x27;processing normalized argv&#x27;, obj);
+      fn.call(this, obj, function(err) {
+        if (err) return cb(err);
+        cb(null, obj);
+      });
+    };
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.config" id="apidoc.element.assemble.plugins.config">
+        function <span class="apidocSignatureSpan">assemble.plugins.</span>config
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function () {
+  return create(&#x27;config&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.loader" id="apidoc.element.assemble.plugins.loader">
+        function <span class="apidocSignatureSpan">assemble.plugins.</span>loader
+        <span class="apidocSignatureSpan">(patterns, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loader(patterns, config) {
+  if (utils.isObject(patterns)) {
+    config = patterns;
+    patterns = undefined;
+  }
+
+  return function plugin(app) {
+    if (utils.isRegistered(this, &#x27;assemble-loader&#x27;)) return;
+
+    // register the plugin on an &#x22;app&#x22;
+    if (utils.isValidInstance(this)) {
+      appLoader(this, config);
+
+      // if patterns are passed to the plugin, load them now
+      if (utils.isValidGlob(patterns)) {
+        this.load(patterns);
+      }
+    }
+
+    // register the plugin on a &#x22;collection&#x22;
+    if (utils.isValidInstance(this, [&#x27;collection&#x27;])) {
+      collectionLoader(this, config);
+
+      // if patterns are passed to the plugin, load them now
+      if (utils.isValidGlob(patterns)) {
+        this.load(patterns);
+      }
+    }
+
+    return plugin;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.logger" id="apidoc.element.assemble.plugins.logger">
+        function <span class="apidocSignatureSpan">assemble.plugins.</span>logger
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logger = function (options) {
+  return function() {
+    if (!utils.isValid(this, &#x27;assemble-logger&#x27;)) return;
+    function logger(prop, color) {
+      color = color || &#x27;dim&#x27;;
+      return function(msg) {
+        var rest = [].slice.call(arguments, 1);
+        return console.log
+          .bind(console, utils.log.timestamp + (prop ? (&#x27; &#x27; + utils.log[prop]) : &#x27;&#x27;))
+          .apply(console, [utils.log[color](msg)].concat(rest));
+      };
+    };
+
+    Object.defineProperty(this, &#x27;log&#x27;, {
+      configurable: true,
+      get: function() {
+        function log() {
+          return console.log.apply(console, arguments);
+        }
+        log.path = function(msg) {
+          return logger(null, &#x27;dim&#x27;).apply(null, arguments);
+        };
+        log.time = function(msg) {
+          return logger(null, &#x27;dim&#x27;).apply(null, arguments);
+        };
+        log.warn = function(msg) {
+          return logger(&#x27;warning&#x27;, &#x27;yellow&#x27;).apply(null, arguments);
+        };
+        log.success = function() {
+          return logger(&#x27;success&#x27;, &#x27;green&#x27;).apply(null, arguments);
+        };
+
+        log.info = function() {
+          return logger(&#x27;info&#x27;, &#x27;cyan&#x27;).apply(null, arguments);
+        };
+
+        log.error = function() {
+          return logger(&#x27;error&#x27;, &#x27;red&#x27;).apply(null, arguments);
+        };
+        log.__proto__ = utils.log;
+        return log;
+      }
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.plugins.runtimes" id="apidoc.element.assemble.plugins.runtimes">
+        function <span class="apidocSignatureSpan">assemble.plugins.</span>runtimes
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runtimes = function (config) {
+  config = config || {};
+
+  return function baseRuntimes(app) {
+    if (!utils.isValid(app, &#x27;base-runtimes&#x27;)) return;
+    var time = new utils.Time();
+    var log = utils.log;
+
+    this.on(&#x27;starting&#x27;, function(build) {
+      // create build context
+      var ctx = {app: build};
+      ctx.key = toKey(namespace(build));
+      ctx.event = &#x27;starting&#x27;;
+      time.start(ctx.key);
+      ctx.time = &#x27;&#x27;;
+      ctx.isBuild = true;
+      ctx.isSilent = silent(app, build, null);
+
+      if (app.hasListeners(&#x27;build&#x27;)) {
+        app.emit(&#x27;build&#x27;, ctx.event, ctx);
+      } else if (app.base.hasListeners(&#x27;build&#x27;)) {
+        app.base.emit(&#x27;build&#x27;, ctx.event, ctx);
+      } else if (!ctx.isSilent) {
+        console.error(log.timestamp, ctx.event, ctx.key, log.red(ctx.time));
+      }
+    });
+
+    this.on(&#x27;finished&#x27;, function(build, run) {
+      // create build context
+      var ctx = {app: build};
+      ctx.key = toKey(namespace(build));
+      ctx.time = time.end(ctx.key);
+      ctx.event = &#x27;finished&#x27;;
+      ctx.isBuild = true;
+      ctx.isSilent = silent(app, build, null);
+
+      if (app.hasListeners(&#x27;build&#x27;)) {
+        app.emit(&#x27;build&#x27;, ctx.event, ctx);
+      } else if (app.base.hasListeners(&#x27;build&#x27;)) {
+        app.base.emit(&#x27;build&#x27;, ctx.event, ctx);
+      } else if (!ctx.isSilent) {
+        console.error(log.timestamp, ctx.event, ctx.key, log.red(ctx.time));
+      }
+    });
+
+    this.on(&#x27;task:starting&#x27;, function(task) {
+      task.key = toKey(namespace(app), name(task) + &#x27; task&#x27;);
+      time.start(&#x27;task:&#x27; + task.key);
+      task.event = &#x27;starting&#x27;;
+      task.time = &#x27;&#x27;;
+      task.isTask = true;
+      task.isSilent = silent(app, null, task);
+
+      if (app.hasListeners(&#x27;task&#x27;)) {
+        app.emit(&#x27;task&#x27;, task.event, task);
+      } else if (app.base.hasListeners(&#x27;task&#x27;)) {
+        app.base.emit(&#x27;task&#x27;, task.event, task);
+      } else if (!task.isSilent) {
+        console.error(log.timestamp, task.event, task.key, log.red(task.time));
+      }
+    });
+
+    this.on(&#x27;task:finished&#x27;, function(task) {
+      task.key = toKey(namespace(app), name(task) + &#x27; task&#x27;);
+      task.time = time.end(&#x27;task:&#x27; + task.key);
+      task.event = &#x27;finished&#x27;;
+      task.isTask = true;
+      task.isSilent = silent(app, null, task);
+
+      if (app.hasListeners(&#x27;task&#x27;)) {
+        app.emit(&#x27;task&#x27;, task.event, task);
+      } else if (app.base.hasListeners(&#x27;task&#x27;)) {
+        app.base.emit(&#x27;task&#x27;, task.event, task);
+      } else if (!task.isSilent) {
+        console.error(log.timestamp, task.event, task.key, log.red(task.time));
+      }
+    });
+
+<span class="apidocCodeCommentSpan">    /**
+     * Handle toggling of verbose and silent modes
+     */
+</span>
+    function silent(app, build, task) {
+      var opts = utils.extend({}, app.base.options, app.options);
+
+      if (build &#x26;&#x26; build.options) {
+        opts = utils.extend({}, opts, build.options);
+      }
+      if (task &#x26;&#x26; task.options) {
+        opts = utils.extend({}, opts, task.options);
+      }
+
+      var verbose = opts.verbose;
+      var silent = opts.silent;
+
+      // handle `verbose` first
+      if (typeof verbose === &#x27;function&#x27;) {
+        return verbose(app, build, task);
+      }
+      if (verbose === true) {
+        return false;
+      }
+      if (task &#x26;&#x26; verbose === &#x27;tasks&#x27;) {
+        return false;
+      }
+      if (build &#x26;&#x26; verbose === &#x27;build&#x27;) {
+        return false;
+      }
+
+      // if not `verbose`, handle `silent`
+      if (typeof silent === &#x27;function&#x27;) {
+        return silent(app, build, task);
+      }
+      if (typeof silent === &#x27;string&#x27;) {
+        silent = [silent];
+      }
+
+      if (build &#x26;&#x26; Array.isArray(silent) &#x26;&#x26; isMatch(silent, build.alias)) {
+        return true;
+      }
+      if (task &#x26;&#x26; Array.isArray(silent) &#x26;&#x26; isMatch(silent, task.name)) {
+        return true;
+      }
+      if (silent === true) {
+        return true;
+      }
+    }
+
+    function name(task) {
+      return task.name || &#x27;&#x27;;
+    }
+
+    function namespace(build) {
+      return build.env ? build.env.namespace : (build.namespace || build._name);
+    }
+
+    function toKey(namespace, name) {
+      var res = &#x27;&#x27;;
+      if (namespace) {
+        namespace = formatN ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.assemble.utils" id="apidoc.module.assemble.utils">module assemble.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.utils" id="apidoc.element.assemble.utils.utils">
+        function <span class="apidocSignatureSpan">assemble.</span>utils
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== &#x27;string&#x27;) {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it&#x27;s called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.arrayify" id="apidoc.element.assemble.utils.arrayify">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>arrayify
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arrayify = function (val) {
+  return [].concat(val || []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * Create a regex for matching file extensions
+ */
+
+utils.extRegex = function(exts) {
+  return new RegExp(&#x27;\\.(&#x27; + utils.<span class="apidocCodeKeywordSpan">arrayify</span>(exts).join(&#x27;|&#x27;) + &#x27
+;)$&#x27;);
+};
+
+/**
+ * Get a home-relative filepath
+ */
+
+utils.homeRelative = function(fp) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.colors" id="apidoc.element.assemble.utils.colors">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>colors
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== &#x27;string&#x27;) {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it&#x27;s called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.exists" id="apidoc.element.assemble.utils.exists">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>exists
+        <span class="apidocSignatureSpan">(filepath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (filepath) {
+  try {
+    (fs.accessSync || fs.statSync)(filepath);
+    return true;
+  } catch (err) {}
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.extRegex" id="apidoc.element.assemble.utils.extRegex">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>extRegex
+        <span class="apidocSignatureSpan">(exts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extRegex = function (exts) {
+  return new RegExp(&#x27;\\.(&#x27; + utils.arrayify(exts).join(&#x27;|&#x27;) + &#x27;)$&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+app.engine(exts, require(&#x27;engine-handlebars&#x27;));
+
+/**
+ * Middleware for parsing front matter
+ */
+
+app.onLoad(utils.<span class="apidocCodeKeywordSpan">extRegex</span>(exts), function(view, next) {
+  // check options inside the middleware to account for options defined after init
+  if (view.options.frontMatter === false) {
+    next();
+    return;
+  }
+  if (app.options.frontMatter === false) {
+    next();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.formatDir" id="apidoc.element.assemble.utils.formatDir">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>formatDir
+        <span class="apidocSignatureSpan">(cwd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatDir = function (cwd) {
+  return utils.colors.yellow(&#x27;~/&#x27; + utils.homeRelative(cwd));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.homeRelative" id="apidoc.element.assemble.utils.homeRelative">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>homeRelative
+        <span class="apidocSignatureSpan">(fp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">homeRelative = function (fp) {
+  var dir = path.resolve(utils.resolveDir(fp));
+  var home = path.resolve(utils.resolveDir(&#x27;~/&#x27;));
+  fp = path.relative(home, dir);
+  if (fp.charAt(0) === &#x27;/&#x27;) {
+    fp = fp.slice(1);
+  }
+  return fp;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * Get formatted cwd path
+ */
+
+utils.formatDir = function(cwd) {
+  return utils.colors.yellow(&#x27;~/&#x27; + utils.<span class="apidocCodeKeywordSpan">homeRelative</span>(cwd));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.isValid" id="apidoc.element.assemble.utils.isValid">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>isValid
+        <span class="apidocSignatureSpan">(app, name, types)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValid = function (app, name, types) {
+  if (typeof name !== &#x27;string&#x27;) {
+    throw new TypeError(&#x27;expected plugin name to be a string&#x27;);
+  }
+
+  // if `app` is not a valid instance of `Base`, or if `app` is a valid
+  // instance of Base by not one of the given `types` return false
+  if (!utils.isValid(app, types)) {
+    return false;
+  }
+
+  // if the `name` has already been registered as a plugin, return false
+  if (utils.isRegistered(app, name)) {
+    return false;
+  }
+
+  var debug = utils.debug(&#x27;base:generate:&#x27; + name);
+  debug(&#x27;initializing from &#x3c;%s&#x3e;&#x27;, (module.parent &#x26;&#x26; module.parent.id) || __dirname);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Add logging methods
+ */
+
+plugins.logger = function(options) {
+return function() {
+  if (!utils.<span class="apidocCodeKeywordSpan">isValid</span>(this, &#x27;assemble-logger&#x27;)) return;
+  function logger(prop, color) {
+    color = color || &#x27;dim&#x27;;
+    return function(msg) {
+      var rest = [].slice.call(arguments, 1);
+      return console.log
+        .bind(console, utils.log.timestamp + (prop ? (&#x27; &#x27; + utils.log[prop]) : &#x27;&#x27;))
+        .apply(console, [utils.log[color](msg)].concat(rest));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.log" id="apidoc.element.assemble.utils.log">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>log
+        <span class="apidocSignatureSpan">(name, alias)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function proxy(name, alias) {
+  var key = alias;
+
+  // camel-case the module `name` if `alias` is not defined
+  if (typeof key !== &#x27;string&#x27;) {
+    key = camelcase(name);
+  }
+
+  // create a getter to lazily invoke the module the first time it&#x27;s called
+  function getter() {
+    return cache[key] || (cache[key] = requireFn(name));
+  }
+
+  // trip the getter if `process.env.UNLAZY` is defined
+  if (unlazy(process.env)) {
+    getter();
+  }
+
+  set(proxy, key, getter);
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `cb` **{Function}**: callback function that exposes `err`
+
+**Example**
+
+```js
+app.build([&#x27;foo&#x27;, &#x27;bar&#x27;], function(err) {
+  if (err) throw err;
+  console.<span class="apidocCodeKeywordSpan">log</span>(&#x27;done!&#x27;);
+});
+```
+
+#### .watch
+
+Watch files, run one or more tasks when a watched file changes.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.parse" id="apidoc.element.assemble.utils.parse">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>parse
+        <span class="apidocSignatureSpan">(args, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser(args, opts) {
+  var result = parse(args.slice(), opts)
+
+  return result.argv
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     next();
+     return;
+   }
+   if (app.options.frontMatter === false) {
+     next();
+     return;
+   }
+   utils.matter.<span class="apidocCodeKeywordSpan">parse</span>(view, next);
+ });
+};
+
+/**
+* Load default plugins. Built-in plugins can be disabled
+* on the `assemble` options.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.parseArgs" id="apidoc.element.assemble.utils.parseArgs">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>parseArgs
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseArgs = function (argv) {
+  var obj = utils.parse(argv, utils.opts);
+  if (obj.init) {
+    obj._.push(&#x27;init&#x27;);
+    delete obj.init;
+  }
+  if (obj.help) {
+    obj._.push(&#x27;help&#x27;);
+    delete obj.help;
+  }
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.questions" id="apidoc.element.assemble.utils.questions">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>questions
+        <span class="apidocSignatureSpan">(config, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">questions = function (config, fn) {
+  return function plugin(app) {
+    if (!utils.isValid(app, &#x27;base-questions&#x27;)) return;
+    debug(&#x27;initializing from &#x3c;%s&#x3e;&#x27;, __filename);
+
+    this.define(&#x27;Questions&#x27;, this.options.questions || utils.Questions);
+    app.cache.answers = app.cache.answers || {};
+
+<span class="apidocCodeCommentSpan">    /**
+     * Events
+     */
+</span>
+    this.on(&#x27;ask&#x27;, function(val, key, question, answers) {
+      var data = utils.merge({}, answers, app.store.data, app.cache.answers, app.cache.data);
+      if (app.option(&#x27;common-config&#x27;) !== false) {
+        data = utils.merge({}, app.questions.common.data, data);
+      }
+      var answer = utils.get(data, key);
+      if (answer) {
+        utils.set(answers, key, answer);
+      }
+    });
+
+    this.on(&#x27;answer&#x27;, function(val, key, question, answers) {
+      app.base.data(key, val);
+      app.data(key, val);
+    });
+
+    /**
+     * Decorate the `questions` instance onto `app` and lazily
+     * invoke the `question-store` lib when a questions related
+     * method is called.
+     */
+
+    utils.sync(this, &#x27;questions&#x27;, function fn() {
+      if (typeof app.store === &#x27;undefined&#x27;) {
+        this.use(utils.store());
+      }
+
+      // return cached instance
+      if (fn._questions) return fn._questions;
+
+      var cwd = app.cwd || process.cwd();
+      var opts = utils.merge({}, app.options, config);
+      opts.data = app.cache.data || {};
+      opts.cwd = cwd;
+
+      var Questions = app.Questions;
+      var questions = new Questions(opts);
+      fn._questions = questions;
+      questions.cwd = cwd;
+
+      var data = questions.data;
+      questions.on(&#x27;ask&#x27;, app.emit.bind(app, &#x27;ask&#x27;));
+      questions.on(&#x27;answer&#x27;, app.emit.bind(app, &#x27;answer&#x27;));
+      questions.on(&#x27;error&#x27;, function(err) {
+        err.reason = &#x27;base-questions error&#x27;;
+        app.emit(&#x27;error&#x27;, err);
+      });
+
+      Object.defineProperty(questions, &#x27;data&#x27;, {
+        set: function(val) {
+          data = val;
+        },
+        get: function() {
+          data = utils.merge({}, data, opts.data);
+          return utils.clone(data);
+        }
+      });
+
+      return questions;
+    });
+
+    /**
+     * Create a `confirm` question.
+     *
+     * ```js
+     * app.confirm(&#x27;file&#x27;, &#x27;Want to generate a file?&#x27;);
+     *
+     * // equivalent to
+     * app.question({
+     *   name: &#x27;file&#x27;,
+     *   message: &#x27;Want to generate a file?&#x27;,
+     *   type: &#x27;confirm&#x27;
+     * });
+     * ```
+     * @name .confirm
+     * @param {String} `name` Question name
+     * @param {String} `msg` Question message
+     * @param {String|Array} `queue` Name or array of question names.
+     * @param {Object|Function} `options` Question options or callback function
+     * @param {Function} `callback` callback function
+     * @api public
+     */
+
+    this.define(&#x27;confirm&#x27;, function() {
+      this.questions.confirm.apply(this.questions, arguments);
+      return this.questions;
+    });
+
+    /**
+     * Create a &#x22;choices&#x22; question from an array.
+     *
+     * ```js
+     * app.choices(&#x27;color&#x27;, &#x27;Favorite color?&#x27;, [&#x27;blue&#x27;, &#x27;orange&#x27;, &#x27;green&#x27;]);
+     *
+     * // or
+     * app.choices(&#x27;color&#x27;, {
+     *   message: &#x27;Favorite color?&#x27;,
+     *   choices: [&#x27;blue&#x27;, &#x27;orange&#x27;, &#x27;green&#x27;]
+     * });
+     *
+     * // or
+     * app.choices({
+     *   name: &#x27;color&#x27;,
+     *   message: &#x27;Favorite color?&#x27;,
+     *   choices: [&#x27;blue&#x27;, &#x27;orange&#x27;, &#x27;green&#x27;]
+     * });
+     * ```
+     * @name .choices
+     * @param {String} `name` Question name
+     * @param {String} `msg` Question message
+     * @param {Array} `choices` Choice items
+     * @param {String|Array} `queue` Name or array of question names.
+     * @param {Object|Function} `options` Question options or callback function
+     * @param {Function} `callback` callback function
+     * @api public
+     */
+
+    this.define(&#x27;choices&#x27;, function() {
+      this.questions.choices.apply(this.questions, arguments);
+      return this.questions;
+    });
+
+    /**
+     * Add a question to be asked by the `.ask` method.
+     *
+     * ```js
+     * app.question(&#x27;beverage&#x27;, &#x27;What is your favorite beverage?&#x27;);
+     *
+     * // or
+     * app.question(&#x27;beverage&#x27;, {
+     *   type: &#x27;input&#x27;,
+     * ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x27;use strict&#x27;;
+
+var utils = require(&#x27;./utils&#x27;);
+
+module.exports = function(app) {
+
+// use `base-questions` plugin for user prompts
+app.use(utils.<span class="apidocCodeKeywordSpan">questions</span>());
+
+/**
+ * Listend for `done` event
+ */
+
+app.on(&#x27;done&#x27;, function() {
+  app.log.success(&#x27;done&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.resolveDir" id="apidoc.element.assemble.utils.resolveDir">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>resolveDir
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveDir(dir) {
+  if (dir.charAt(0) === &#x27;~&#x27;) {
+    dir = expand(dir);
+  }
+  if (dir.charAt(0) === &#x27;@&#x27;) {
+    dir = path.join(gm, dir.slice(1));
+  }
+  return dir;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * Get a home-relative filepath
+ */
+
+utils.homeRelative = function(fp) {
+  var dir = path.resolve(utils.<span class="apidocCodeKeywordSpan">resolveDir</span>(fp));
+  var home = path.resolve(utils.resolveDir(&#x27;~/&#x27;));
+  fp = path.relative(home, dir);
+  if (fp.charAt(0) === &#x27;/&#x27;) {
+    fp = fp.slice(1);
+  }
+  return fp;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.utils.spawn" id="apidoc.element.assemble.utils.spawn">
+        function <span class="apidocSignatureSpan">assemble.utils.</span>spawn
+        <span class="apidocSignatureSpan">(command, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function spawn(command, args, options) {
+    var parsed;
+    var spawned;
+
+    // Parse the arguments
+    parsed = parse(command, args, options);
+
+    // Spawn the child process
+    spawned = cp.spawn(parsed.command, parsed.args, parsed.options);
+
+    // Hook into child process &#x22;exit&#x22; event to emit an error if the command
+    // does not exists, see: https://github.com/IndigoUnited/node-cross-spawn/issues/16
+    enoent.hookChildProcess(spawned, parsed);
+
+    return spawned;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Install devDependencies
+ */
+
+function install(args, cb) {
+  args = [&#x27;install&#x27;, &#x27;--save-dev&#x27;].concat(args);
+  utils.<span class="apidocCodeKeywordSpan">spawn</span>(&#x27;npm&#x27;, args, {stdio: &#x27;inherit&#x27;})
+    .on(&#x27;error&#x27;, cb)
+    .on(&#x27;close&#x27;, function(code, err) {
+      cb(err, code);
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

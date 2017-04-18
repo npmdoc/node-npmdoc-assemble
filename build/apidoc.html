@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.assemble">
+            function <span class="apidocSignatureSpan"></span>assemble
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.assemble.initAssemble">
             function <span class="apidocSignatureSpan">assemble.</span>initAssemble
             <span class="apidocSignatureSpan">(app)</span>
@@ -93,6 +102,15 @@
             <a class="apidocElementLiA" href="#apidoc.element.assemble.plugins">
             function <span class="apidocSignatureSpan">assemble.</span>plugins
             <span class="apidocSignatureSpan">(name, alias)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.toString">
+            function <span class="apidocSignatureSpan">assemble.</span>toString
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -330,6 +348,26 @@
 
 
     <h2>
+        <a href="#apidoc.element.assemble.assemble" id="apidoc.element.assemble.assemble">
+        function <span class="apidocSignatureSpan"></span>assemble
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Assemble(options) {
+  if (!(this instanceof Assemble)) {
+    return new Assemble(options);
+  }
+  Core.call(this, options);
+  this.is(&#x27;assemble&#x27;);
+  this.initAssemble();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.assemble.initAssemble" id="apidoc.element.assemble.initAssemble">
         function <span class="apidocSignatureSpan">assemble.</span>initAssemble
         <span class="apidocSignatureSpan">(app)</span>
@@ -494,6 +532,21 @@ Assemble.initDefaults = function(app) {
 
   set(proxy, key, getter);
   return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.assemble.toString" id="apidoc.element.assemble.toString">
+        function <span class="apidocSignatureSpan">assemble.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>

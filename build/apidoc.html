@@ -108,19 +108,16 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.assemble.toString">
-            function <span class="apidocSignatureSpan">assemble.</span>toString
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils">
+            function <span class="apidocSignatureSpan">assemble.</span>utils
+            <span class="apidocSignatureSpan">(name, alias)</span>
             </a>
 
         </li>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.assemble.utils">
-            function <span class="apidocSignatureSpan">assemble.</span>utils
-            <span class="apidocSignatureSpan">(name, alias)</span>
-            </a>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">assemble.</span>_callbacks</span>
 
         </li>
 
@@ -539,21 +536,6 @@ Assemble.initDefaults = function(app) {
 
 
     <h2>
-        <a href="#apidoc.element.assemble.toString" id="apidoc.element.assemble.toString">
-        function <span class="apidocSignatureSpan">assemble.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.assemble.utils" id="apidoc.element.assemble.utils">
         function <span class="apidocSignatureSpan">assemble.</span>utils
         <span class="apidocSignatureSpan">(name, alias)</span>
@@ -583,6 +565,8 @@ Assemble.initDefaults = function(app) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 </div>
@@ -668,7 +652,23 @@ Assemble.initDefaults = function(app) {
     });
   };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+/**
+ * Process command line arguments
+ */
+
+var tasks = argv._.length ? argv._ : [&#x27;default&#x27;];
+var args = app.<span class="apidocCodeKeywordSpan">argv</span>(argv);
+args.tasks = tasks;
+
+app.set(&#x27;cache.argv&#x27;, args);
+app.option(args);
+
+/**
+ * Show path to assemblefile
+...</pre></li>
     </ul>
 
 
@@ -997,7 +997,23 @@ Assemble.initDefaults = function(app) {
       var res = &#x27;&#x27;;
       if (namespace) {
         namespace = formatN ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    app.log.path(&#x27;using assemblefile &#x27; + utils.colors.green(&#x27;~/&#x27; + fp));
+  }
+
+  /**
+   * Registert `runtimes` plugin
+   */
+
+  app.use(plugins.<span class="apidocCodeKeywordSpan">runtimes</span>());
+
+  /**
+   * Process command line arguments
+   */
+
+  cb(null, app);
+}
+...</pre></li>
     </ul>
 
 
@@ -1119,7 +1135,23 @@ utils.homeRelative = function(fp) {
   } catch (err) {}
   return false;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var assemblefile = path.resolve(cwd, argv.file || &#x27;assemblefile.js&#x27;);
+
+/**
+ * Get the `assemble` instance to use
+ */
+
+var defaults = require(&#x27;../lib/generator&#x27;);
+var configfile = utils.<span class="apidocCodeKeywordSpan">exists</span>(assemblefile);
+if (configfile) {
+  app = require(assemblefile);
+} else {
+  app = defaults;
+}
+
+/**
+...</pre></li>
     </ul>
 
 
@@ -1165,7 +1197,22 @@ app.onLoad(utils.<span class="apidocCodeKeywordSpan">extRegex</span>(exts), func
     <li>description and source-code<pre class="apidocCodePre">formatDir = function (cwd) {
   return utils.colors.yellow(&#x27;~/&#x27; + utils.homeRelative(cwd));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cwd = process.cwd();
+}
+
+/**
+ * Log the working directory
+ */
+
+console.log(utils.log.timestamp, &#x27;using cwd &#x27; + utils.<span class="apidocCodeKeywordSpan">formatDir</span>(cwd));
+
+/**
+ * Get the assemblefile.js to use
+ */
+
+var assemblefile = path.resolve(cwd, argv.file || &#x27;assemblefile.js&#x27;);
+...</pre></li>
     </ul>
 
 
@@ -1187,15 +1234,22 @@ app.onLoad(utils.<span class="apidocCodeKeywordSpan">extRegex</span>(exts), func
   return fp;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-};
+
+if (typeof app === &#x27;function&#x27;) {
+  var fn = app;
+  app = assemble(argv);
+  app.option(argv);
+  app.use(fn);
+} else if (Object.keys(app).length === 0) {
+  var msg = util.format(errors[&#x27;instance&#x27;], utils.<span class="apidocCodeKeywordSpan">homeRelative</span>(assemblefile
+));
+  cb(new Error(msg));
+  return;
+}
+
+assemble.initPlugins(app);
 
 /**
- * Get formatted cwd path
- */
-
-utils.formatDir = function(cwd) {
-  return utils.colors.yellow(&#x27;~/&#x27; + utils.<span class="apidocCodeKeywordSpan">homeRelative</span>(cwd));
-};
 ...</pre></li>
     </ul>
 
@@ -1278,20 +1332,22 @@ return function() {
   return getter;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-* `cb` **{Function}**: callback function that exposes `err`
 
-**Example**
+### [0.16.1]
 
-```js
-app.build([&#x27;foo&#x27;, &#x27;bar&#x27;], function(err) {
-  if (err) throw err;
-  console.<span class="apidocCodeKeywordSpan">log</span>(&#x27;done!&#x27;);
-});
-```
+- bump dependencies. In particular, there was a bug in [parser-front-matter][] where leading whitespace was removed after extracting
+ front-matter, which caused the first line of indentation to be removed. This has been fixed.
 
-#### .watch
+### [0.16.0]
 
-Watch files, run one or more tasks when a watched file changes.
+- **Added**: `.<span class="apidocCodeKeywordSpan">log</span>()` method, which also exposes additional methods, like `.log.info()`, `.
+log.success()`, etc.
+- docs were moved to `support/docs`, so that markdown docs can be built to the `docs` directory
+- docs were updated, new docs added
+- Moves some private prototype methods to static methods, to allow them to be used without creating an instance
+- Bumps [assemble-core][] to v0.25.0
+
+### [0.15.0]
 ...</pre></li>
     </ul>
 
@@ -1349,7 +1405,23 @@ Watch files, run one or more tasks when a watched file changes.
   }
   return obj;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var util = require(&#x27;util&#x27;);
+var path = require(&#x27;path&#x27;);
+var assemble = require(&#x27;..&#x27;);
+var commands = require(&#x27;../lib/commands&#x27;);
+var plugins = require(&#x27;../lib/plugins&#x27;);
+var utils = require(&#x27;../lib/utils&#x27;);
+var errors = require(&#x27;./errors&#x27;);
+var argv = utils.<span class="apidocCodeKeywordSpan">parseArgs</span>(process.argv.slice(2));
+
+function run(cb) {
+var cwd = process.cwd();
+var app;
+
+/**
+ * Set the working directory
+...</pre></li>
     </ul>
 
 

@@ -1,6 +1,6 @@
 # npmdoc-assemble
 
-#### api documentation for  [assemble (v0.23.0)](https://github.com/assemble/assemble)  [![npm package](https://img.shields.io/npm/v/npmdoc-assemble.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-assemble) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-assemble.svg)](https://travis-ci.org/npmdoc/node-npmdoc-assemble)
+#### basic api documentation for  [assemble (v0.23.0)](https://github.com/assemble/assemble)  [![npm package](https://img.shields.io/npm/v/npmdoc-assemble.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-assemble) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-assemble.svg)](https://travis-ci.org/npmdoc/node-npmdoc-assemble)
 
 #### Get the rocks out of your socks! Assemble makes you fast at creating web projects. Assemble is used by thousands of projects for rapid prototyping, creating themes, scaffolds, boilerplates, e-books, UI components, API documentation, blogs, building websit
 
